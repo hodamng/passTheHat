@@ -6,6 +6,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.EditText;
 
 public class TeamNames extends AppCompatActivity {
 
@@ -13,17 +14,16 @@ public class TeamNames extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_team_names);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        EditText editText = (EditText) findViewById(R.id.editText3);
+        Integer value = 0;
+        Bundle extras = getIntent().getExtras();
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        if (extras != null) {
+            value =  extras.getInt("com.passthehat.teamnumber.MESSAGE");
+        }
+
+        editText.setText(value.toString());
+
     }
 
 }

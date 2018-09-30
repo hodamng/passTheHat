@@ -19,7 +19,8 @@
         <activity
             android:name=".TeamNames"
             android:label="@string/title_activity_team_names"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Choices"></activity>
     </application>
 
 </manifest>
