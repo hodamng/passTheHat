@@ -58,7 +58,7 @@ public class TeamNames extends AppCompatActivity {
         editor.putStringSet("teams", set);
         editor.commit();
 
-        Intent intent = new Intent(this, Choices.class);
+        Intent intent = new Intent(this, TeamInput.class);
         startActivity(intent);
 
     }
