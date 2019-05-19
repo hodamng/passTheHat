@@ -39,9 +39,15 @@ public class TeamInputFragment extends Fragment {
         mTextView7 = (TextView) view.findViewById(R.id.textView7);
         mTextView7.setText(item);
 
-        Integer current_member = sharedpreferences.getInt("current_member", 1);
+        Integer current_member = sharedpreferences.getInt("current_team_member", 1);
         TextView tv = (TextView) view.findViewById(R.id.team_member);
         tv.setText("Player " + current_member.toString());
+
+        SharedPreferences.Editor editor = sharedpreferences.edit();
+        editor.putInt("current_team_member", current_member++);
+        editor.apply();
+
+        current_member = sharedpreferences.getInt("current_team_member", 1);
 
         return view;
     }

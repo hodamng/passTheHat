@@ -35,4 +35,12 @@ public class TeamInput extends AppCompatActivity {
 
     }
 
+    public void onButtonNextPlayerClicked(View view) {
+        getSupportFragmentManager().beginTransaction()
+        .replace(R.id.container, TeamInputFragment.newInstance())
+        .commitNow();
+
+    }
+
+
 }

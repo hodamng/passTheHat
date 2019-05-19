@@ -58,7 +58,7 @@ public class TeamNames extends AppCompatActivity {
         editor.putStringSet("teams", set);
 
         editor.putString("current_team", ((EditText)ll.getChildAt(0)).getText().toString());
-        editor.putInt("c", 1);
+        editor.putInt("current_team_member", 1);
         editor.commit();
 
         Intent intent = new Intent(this, TeamInput.class);
