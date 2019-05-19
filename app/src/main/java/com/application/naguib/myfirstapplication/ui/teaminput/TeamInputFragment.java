@@ -24,11 +24,26 @@ public class TeamInputFragment extends Fragment {
         return new TeamInputFragment();
     }
 
+    TextView mTextView7;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.team_input_fragment, container, false);
+
+        SharedPreferences sharedpreferences = this.getActivity().getSharedPreferences("pass_the_hat", Context.MODE_PRIVATE);
+        Set<String> set = sharedpreferences.getStringSet("teams", null);
+        String item = set.iterator().next();
+
+        View view = inflater.inflate(R.layout.team_input_fragment, container, false);
+        mTextView7 = (TextView) view.findViewById(R.id.textView7);
+        mTextView7.setText(item);
+
+        Integer current_member = sharedpreferences.getInt("current_member", 1);
+        TextView tv = (TextView) view.findViewById(R.id.team_member);
+        tv.setText("Player " + current_member.toString());
+
+        return view;
     }
 
     @Override

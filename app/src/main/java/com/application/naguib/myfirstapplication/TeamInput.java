@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
+import android.view.View;
 
 import com.application.naguib.myfirstapplication.ui.teaminput.TeamInputFragment;
 
@@ -25,9 +26,13 @@ public class TeamInput extends AppCompatActivity {
         SharedPreferences sharedpreferences = getSharedPreferences("pass_the_hat", Context.MODE_PRIVATE);
         Set<String> set = sharedpreferences.getStringSet("teams", null);
         String item = set.iterator().next();
-        TextView ll = (TextView)findViewById(R.id.textView7);
-        // ll.setText(item);
+
         //TODO: get the fragment first
         // then get the text view from there. or we can use view model
+//        TeamInputFragment frag = (TeamInputFragment)getSupportFragmentManager().
+//                findFragmentById(R.id.container);
+//        frag.updateText7(item);
+
     }
+
 }
